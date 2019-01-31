@@ -24,7 +24,10 @@ public final class Main {
 
 		//The port that we should run on can be set into an environment variable
 		//Look for that variable and use the default port if it isn't there.
-		String webPort = System.getProperty("PORT", defaultPort);
+		String webPort = System.getenv("PORT");
+		if(webPort == null || webPort.isEmpty()) {
+			webPort = defaultPort;
+		}
 		tomcat.setPort(Integer.valueOf(webPort));
 
 		final StandardContext
