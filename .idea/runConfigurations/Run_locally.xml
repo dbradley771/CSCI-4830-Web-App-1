@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run locally" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.dbradley771.uno.y19.spring.cscs4830.Main" />
+    <module name="web-app-1" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.dbradley771.uno.y19.spring.cscs4830.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
