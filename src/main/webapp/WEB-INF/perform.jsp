@@ -4,14 +4,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
     <title>Perform</title>
     <style>
         body {
-            font-family: "Times New Roman", Serif
+            font-family: "Times New Roman", Serif;
+            font-size: 100%;
         }
         table {
             margin: 0 auto;
-            border: 1px solid black;
+            border: 0.063em solid black;
             border-collapse: separate;
             padding: 1.2em;
             max-width: 34em;
@@ -21,8 +23,11 @@
             text-align: left;
         }
         td, th {
-            border: 1px solid black;
+            border: 0.063em solid black;
             padding: 1.31em;
+        }
+        input {
+            font-size: 0.834em;
         }
         #submit {
             display: block;
@@ -30,16 +35,21 @@
             padding: 0 2.4em;
             font-size: 0.9em;
         }
-        .warning {
+        #warnings {
+            padding: 0;
+            margin: 0;
+            list-style: none;
             text-align: center;
             color: red;
         }
     </style>
 </head>
 <body>
-<c:forEach items="${warnings}" var="warning">
-    <p class="warning"><c:out value = "${warning}"/></p>
-</c:forEach>
+<ul id="warnings">
+    <c:forEach items="${warnings}" var="warning">
+        <li><c:out value = "${warning}"/></li>
+    </c:forEach>
+</ul>
 <hr/>
 <table>
     <tr>
@@ -70,7 +80,7 @@
     </tr>
 </table>
 <hr/>
-    <form action="./">
+    <form action="./" accept-charset="UTF-8">
         <input hidden type="number" name="x" value="${values.x}"/>
         <input hidden type="number" name="y" value="${values.y}"/>
         <input hidden type="checkbox" name="o" value="s" <c:if test="${operations.doSum}">checked="checked"</c:if>/>
