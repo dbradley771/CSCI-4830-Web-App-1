@@ -93,19 +93,20 @@
 <script>
     function validateForm(event) {
         var checkboxWarning = document.getElementById("checkbox-warning");
-        if (document.contains(checkboxWarning)) {
-            checkboxWarning.remove();
+        var warnings = document.getElementById("warnings");
+        if (warnings.contains(checkboxWarning)) {
+            warnings.removeChild(checkboxWarning)
         }
 
         var checkboxes = document.querySelectorAll("input[type=\"checkbox\"]");
-        var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+        var checkedOne = Array.prototype.slice.call(checkboxes).some(function (x) { return x.checked });
         if (!checkedOne) {
             event.preventDefault()
             var listItem = document.createElement("li");
             var listItemText = document.createTextNode("Please select at least one checkbox.");
             listItem.appendChild(listItemText);
             listItem.setAttribute("id", "checkbox-warning");
-            document.getElementById("warnings").appendChild(listItem);
+            warnings.appendChild(listItem);
         }
     }
 </script>
