@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run locally" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.dbradley771.uno.y19.spring.cscs4830.Main" />
-    <module name="web-app-1" />
+    <module name="Web App 1" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.dbradley771.uno.y19.spring.cscs4830.*" />
